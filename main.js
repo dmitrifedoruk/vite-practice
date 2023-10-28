@@ -24,69 +24,37 @@ document.querySelector('#app').innerHTML = `
 
 
 
-
-// async function getText(file) {
-//     let myObject = await fetch(file);
-//     let myText = await myObject.text();
-//     document.getElementById("demo").innerHTML = myText;
-// }
-//
-// getText("fetch_info.txt").then();
-
-const lat = 39.5839498;
-const lon = -77.045579;
-const key = "0dbdaf1b523dd3671daa3bc385773929";
-
-//saved data for debugging to reduce api calls
-//const api_url = "public/sample_101723_2030.json";
-//const api_url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${key}`;
-
-//const api_url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/39.5839498%2C-77.045579?unitGroup=us&key=VVCSRQSK44Z6RCJPELNYULFZ6&contentType=json";
-
-
-
-
-
-
-//const api_url = "https://api.dictionaryapi.dev/api/v2/entries/en/hamburger";
-
-
-//template for api calls
-// async function getUser() {
-//
-//     // Making an API call (request)
-//     // and getting the response back
-//     const response = await fetch(api_url);
-//
-//     // Parsing it to JSON format
-//     const data = await response.json();
-//     //console.log(data['current']['temp']);
-//     console.log(data[0]["word"]);
-//
-//     //const fahrenheit = ((data['current']['temp'] - 273.15) * 1.8) + 32;
-//
-//     //document.getElementById("demo").innerHTML = fahrenheit.toFixed(1).toLocaleString() + "&#176;F";
-//
-//     document.getElementById("demo").innerHTML = data[0]["meanings"][0]["definitions"][0]["definition"];
-//
-// }
-
 let length = 1;
+
+let data = "";
+
+
+async function getData(input) {
+
+    const api_url = `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`;
+
+    const response = await fetch(api_url);
+
+    data = await response.json();
+
+    return data;
+
+}
+
+data = getData("artifice").then();
+
+console.log(data);
+
+
 
 
 async function getUser() {
 
     const input = document.getElementById("wordInput").value;
 
-    const api_url = `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`;
-
-    // Making an API call (request)
-    // and getting the response back
-    const response = await fetch(api_url);
-
     // Parsing it to JSON format
-    const data = await response.json();
-    //console.log(data['current']['temp']);
+    const data = await getData(input);
+
     length = data[0]["meanings"][0]["definitions"].length;
 
     setupCounter(document.querySelector('#counter'),length);
@@ -99,14 +67,15 @@ async function getUser() {
     }, false);
 
 
-
-    //const fahrenheit = ((data['current']['temp'] - 273.15) * 1.8) + 32;
-
-    //document.getElementById("demo").innerHTML = fahrenheit.toFixed(1).toLocaleString() + "&#176;F";
-
     document.getElementById("demo").innerHTML = data[0]["meanings"][0]["definitions"][0]["definition"];
 
+
 }
+
+
+
+
+
 
 document.getElementById("wordButton").addEventListener("click", getUser, false);
 
@@ -122,14 +91,12 @@ document.getElementById("wordInput").addEventListener("keypress", function(event
 
 document.getElementById("wordButton").addEventListener("click", getUser, false);
 
-console.log(length);
-
 
 setupCounter(document.querySelector('#counter'),length);
 
+//getData("hamburger").then();
 
-// Calling the function
-//getUser();
+
 
 
 
