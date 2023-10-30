@@ -30,17 +30,18 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: rgba(116, 123, 255, 0.9);
+  overflow-y: hidden;
 }
 
 h1 {
   font-size: 3.2em;
-  line-height: 1.1;
+  margin: 0;
 }
 
 #app {
-  max-width: 1280px;
+
   margin: 0 auto;
-  padding: 2rem;
+
   text-align: center;
 }
 
@@ -86,6 +87,12 @@ button:focus-visible {
 
 #demo {
   font-size: 30px;
+  height: 100px;
+}
+
+#demo2 {
+  height: 100px;
+  font-size: 25px;
 }
 
 #demo:hover {
