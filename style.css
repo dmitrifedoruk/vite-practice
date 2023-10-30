@@ -39,7 +39,7 @@ h1 {
 }
 
 #app {
-
+  max-width: 1400px;
   margin: 0 auto;
 
   text-align: center;
@@ -87,11 +87,11 @@ button:focus-visible {
 
 #demo {
   font-size: 30px;
-  height: 100px;
+  height: 80px;
 }
 
 #demo2 {
-  height: 100px;
+  height: 60px;
   font-size: 25px;
 }
 
