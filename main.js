@@ -18,6 +18,8 @@ document.querySelector('#app').innerHTML = `
     
     
     <p id="demo">Fetch a file to change this text.</p>
+    
+    <p id="demo2"></p>
   </div>
 `
 
@@ -63,11 +65,31 @@ async function getUser() {
 
     document.getElementById("counter").addEventListener("click", function() {
         let count = parseInt(document.getElementById("amount").innerHTML);
-        document.getElementById("demo").innerHTML = data[0]["meanings"][0]["definitions"][count-1]["definition"];
+
+        const definition = data[0]["meanings"][0]["definitions"][count-1];
+        document.getElementById("demo").innerHTML = definition["definition"];
+
+        if(definition.hasOwnProperty('example'))
+        {
+            document.getElementById("demo2").innerHTML = '"'+definition["example"]+'"';
+        }
+        else{
+            document.getElementById("demo2").innerHTML = '';
+        }
+
+        //document.getElementById("demo").innerHTML = data[0]["meanings"][0]["definitions"][count-1]["definition"];
     }, false);
 
+    const definition = await data[0]["meanings"][0]["definitions"][0];
+    document.getElementById("demo").innerHTML = definition["definition"];
 
-    document.getElementById("demo").innerHTML = data[0]["meanings"][0]["definitions"][0]["definition"];
+    if(definition.hasOwnProperty('example'))
+    {
+        document.getElementById("demo2").innerHTML = '"'+definition["example"]+'"';
+    }
+    else{
+        document.getElementById("demo2").innerHTML = '';
+    }
 
 
 }
