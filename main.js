@@ -1,10 +1,11 @@
 import './style.css'
 import bottleLogo from '/message-in-a-bottle.svg'
+import dragonLogo from '/dragon1.svg'
 import { setupCounter } from './counter.js'
 
 document.querySelector('#app').innerHTML = `
   <div>
-  <img src="${bottleLogo}" class="logo" alt="bottle logo" />
+  <img src="${dragonLogo}" class="logo" alt="dragon logo" />
     <h1>Hello!</h1>
     <div class="card">
       <button id="counter" type="button"></button>
@@ -117,7 +118,6 @@ document.getElementById("wordButton").addEventListener("click", getUser, false);
 setupCounter(document.querySelector('#counter'),length);
 
 //getData("hamburger").then();
-
 
 
 
