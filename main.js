@@ -57,7 +57,7 @@ async function getData(input) {
 
 data = getData(input).then();
 
-console.log(data);
+console.log(import.meta.env);
 
 
 
