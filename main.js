@@ -38,7 +38,7 @@ let length = 1;
 
 let data = "";
 
-const input = import.meta.env.API_KEY;
+const input = import.meta.env.VITE_API_KEY;
 
 
 async function getData(input) {
