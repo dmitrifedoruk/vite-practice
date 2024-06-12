@@ -43,9 +43,9 @@ const input = import.meta.env.VITE_API_KEY;
 
 async function getData(input) {
 
-    const api_url = `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`;
+    // const api_url = `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`;
 
-    const response = await fetch();
+    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${input}`);
 
     data = await response.json();
 
