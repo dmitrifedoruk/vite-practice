@@ -29,7 +29,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: rgba(116, 123, 255, 0.9);
+  /*background-color: rgba(116, 123, 255, 0.9);*/
+  background-color: rgb(163, 194, 69);
   overflow-y: hidden;
 }
 
