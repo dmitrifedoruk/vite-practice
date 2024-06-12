@@ -40,14 +40,6 @@ let data = "";
 
 const input = import.meta.env.VITE_API_KEY;
 
-// const api_url = `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`;
-
-const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${input}`);
-
-data = await response.json();
-
-console.log(data);
-
 
 async function getData(input) {
 
@@ -63,9 +55,9 @@ async function getData(input) {
 
 // data = getData("artifice").then();
 
-// data = getData(input).then();
-//
-// console.log(import.meta.env);
+data = getData(input).then();
+
+console.log(data);
 
 
 
