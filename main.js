@@ -60,7 +60,7 @@ async function getData(input) {
 
 }
 
-data = getData("artifice").then();
+data = getData(process.env.WORD).then();
 
 // data = getData(input).then();
 
@@ -177,6 +177,14 @@ document.getElementById("wordButton").addEventListener("click", getWord, false);
 // setupCounter(document.querySelector('#counter'),length);
 
 // getData("hamburger").then();
+
+// async function getText() {
+//     let myObject = await fetch(``);
+//     let myText = await myObject.text();
+//     document.getElementById("demo").innerHTML = myText;
+// }
+//
+// getText("fetch_info.txt").then();
 
 
 

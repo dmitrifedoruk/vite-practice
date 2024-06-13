@@ -1,5 +1,4 @@
-module.exports = (req, res) => {
-    res.json({
-        hola: 'mundo'
-    })
+export async function GET(request) {
+
+    return new Response(`${process.env.WORD}`);
 }
