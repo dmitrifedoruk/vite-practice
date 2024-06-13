@@ -8,6 +8,8 @@ document.querySelector('#app').innerHTML = `
   <img src="${dragonLogo}" class="logo" alt="dragon logo" />
     <h1>Hello!</h1>
     
+    <button type="button" onclick="api/hello">example</button>
+    
     <div class="card">
       <label for="textInput">A word, please:&nbsp;</label>
       <input id="wordInput" />
@@ -18,7 +20,6 @@ document.querySelector('#app').innerHTML = `
     <h2 id="heading"></h2>
     
     <div class="card" id="topCard">
-<!--      <button id="counter" type="button"></button>-->
 
     </div>
     
@@ -45,9 +46,15 @@ async function getData(input) {
 
     // const api_url = `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`;
 
-    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${input}`);
+    const requestOptions = {
+        method: "POST"
+    };
 
-    data = await response.json();
+    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${input}`,requestOptions);
+
+    let data = "";
+
+    data = await response;
 
     return data;
 
