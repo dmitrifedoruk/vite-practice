@@ -46,11 +46,11 @@ async function getData(input) {
 
     // const api_url = `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`;
 
-    const requestOptions = {
-        method: "POST"
-    };
+    // const requestOptions = {
+    //     method: "POST"
+    // };
 
-    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${input}`,requestOptions);
+    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${input}`);
 
     let data = "";
 
