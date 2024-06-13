@@ -7,7 +7,7 @@ export async function GET(request) {
 
     data = await response;
 
-    const definition = await data[0]["meanings"][0]["definitions"][0]["definition"];
+    const definition = data[0]["meanings"][0]["definitions"][0]["definition"].toString();
 
 
 
