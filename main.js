@@ -8,7 +8,7 @@ document.querySelector('#app').innerHTML = `
   <img src="${dragonLogo}" class="logo" alt="dragon logo" />
     <h1>Hello!</h1>
     
-    <button type="button" onclick="api/hello">example</button>
+    <button type="button" formaction="/api/hello">example</button>
     
     <div class="card">
       <label for="textInput">A word, please:&nbsp;</label>
