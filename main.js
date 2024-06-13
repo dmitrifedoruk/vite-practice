@@ -60,11 +60,11 @@ async function getData(input) {
 
 }
 
-data = getData(process.env.WORD).then();
+// data = getData(process.env.WORD).then();
 
 // data = getData(input).then();
 
-console.log(data);
+console.log(process.env);
 
 
 
@@ -178,13 +178,13 @@ document.getElementById("wordButton").addEventListener("click", getWord, false);
 
 // getData("hamburger").then();
 
-// async function getText() {
-//     let myObject = await fetch(``);
-//     let myText = await myObject.text();
-//     document.getElementById("demo").innerHTML = myText;
-// }
-//
-// getText("fetch_info.txt").then();
+async function getText() {
+    let myObject = await fetch(``);
+    let myText = await myObject.text();
+    document.getElementById("demo").innerHTML = myText;
+}
+
+getText("fetch_info.txt").then();
 
 
 
