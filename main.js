@@ -181,7 +181,9 @@ document.getElementById("wordButton").addEventListener("click", getWord, false);
 async function getText() {
     let myObject = await fetch(`/api/hello`);
 
-    console.log(myObject);
+    console.log("things are happening");
+
+    console.log(myObject.body);
     // let myText = await myObject.text();
     // document.getElementById("demo").innerHTML = myText;
 }
