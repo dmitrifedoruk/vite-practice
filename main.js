@@ -64,7 +64,7 @@ async function getData(input) {
 
 // data = getData(input).then();
 
-console.log(process.env);
+console.log(import.meta.env);
 
 
 
