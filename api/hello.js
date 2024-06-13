@@ -3,5 +3,11 @@ export async function GET(request) {
 
     const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${process.env.WORD}`);
 
-    return new Response(JSON.stringify(response));
+    let data = "";
+
+    data = await response;
+
+    console.log(data);
+
+    return new Response(`Hello from ${process.env.WORD}`);
 }

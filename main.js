@@ -62,7 +62,7 @@ async function getData(input) {
 
 data = getData("artifice").then();
 
-data = getData(input).then();
+// data = getData(input).then();
 
 console.log(data);
 
