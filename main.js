@@ -179,12 +179,14 @@ document.getElementById("wordButton").addEventListener("click", getWord, false);
 // getData("hamburger").then();
 
 async function getText() {
-    let myObject = await fetch(``);
-    let myText = await myObject.text();
-    document.getElementById("demo").innerHTML = myText;
+    let myObject = await fetch(`/api/hello`);
+
+    console.log(myObject);
+    // let myText = await myObject.text();
+    // document.getElementById("demo").innerHTML = myText;
 }
 
-getText("fetch_info.txt").then();
+getText().then();
 
 
 
