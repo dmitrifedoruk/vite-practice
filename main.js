@@ -39,7 +39,7 @@ let length = 1;
 
 let data = "";
 
-const input = import.meta.env.VITE_API_KEY;
+// const input = import.meta.env.WORD;
 
 
 async function getData(input) {
@@ -60,7 +60,7 @@ async function getData(input) {
 
 }
 
-// data = getData("artifice").then();
+data = getData("artifice").then();
 
 data = getData(input).then();
 
