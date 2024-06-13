@@ -7,7 +7,9 @@ export async function GET(request) {
 
     data = await response;
 
-    console.log(data);
+    const definition = await data[0]["meanings"][0]["definitions"][0]["definition"];
 
-    return new Response(`Hello from ${process.env.WORD}`);
+
+
+    return new Response(definition);
 }
