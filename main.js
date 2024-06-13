@@ -183,7 +183,7 @@ async function getText() {
 
     console.log("things are happening");
 
-    console.log(myObject);
+    console.log(myObject["data"]);
     // let myText = await myObject.text();
     // document.getElementById("demo").innerHTML = myText;
 }
