@@ -4,7 +4,13 @@ export async function GET(request) {
         data: process.env.WORD
     }
 
-    const myOptions = { status: 200, statusText: "SuperSmashingGreat!"};
+    // const myOptions = { status: 200, statusText: "SuperSmashingGreat!"};
 
-    return new Response(JSON.stringify(api_string), myOptions);
+    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${api_string}`);
+
+    let data = "";
+
+    data = await response;
+
+    return new Response(JSON.stringify(response));
 }
