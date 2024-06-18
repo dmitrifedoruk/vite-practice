@@ -14,5 +14,5 @@ export async function GET(request) {
 
     data = response;
 
-    return new Response(JSON.stringify(response));
+    return new Response(JSON.stringify(myOptions));
 }
