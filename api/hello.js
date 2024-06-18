@@ -6,5 +6,5 @@ export async function GET(request) {
 
     // const myOptions = { status: 200, statusText: "SuperSmashingGreat!"};
 
-    return new Response(api_string);
+    return new Response(JSON.stringify(api_string));
 }
