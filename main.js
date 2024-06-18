@@ -32,9 +32,9 @@ let length = 1;
 let data = "";
 
 
-async function getData() {
+async function getData(input) {
 
-    const api_url = `api/hello`;
+    const api_url = `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`;
 
     const response = await fetch(api_url);
 
@@ -44,7 +44,7 @@ async function getData() {
 
 }
 
-data = getData().then();
+data = getData("artifice").then();
 
 console.log(data);
 
@@ -53,14 +53,14 @@ console.log(data);
 
 async function getUser() {
 
-    //const input = document.getElementById("wordInput").value;
+    const input = document.getElementById("wordInput").value;
 
     // Parsing it to JSON format
-    const data = await getData();
+    const data = await getData(input);
 
     length = data[0]["meanings"][0]["definitions"].length;
 
-    // setupCounter(document.querySelector('#counter'),length);
+    setupCounter(document.querySelector('#counter'),length);
 
 
     document.getElementById("counter").addEventListener("click", function() {
@@ -114,7 +114,21 @@ document.getElementById("wordInput").addEventListener("keypress", function(event
 document.getElementById("wordButton").addEventListener("click", getUser, false);
 
 
-// setupCounter(document.querySelector('#counter'),length);
+setupCounter(document.querySelector('#counter'),length);
+
+async function getText() {
+    let myObject = await fetch(`/api/hello`);
+
+    console.log("things are happening");
+
+    console.log(myObject);
+    // let myText = await myObject.text();
+    // document.getElementById("demo").innerHTML = myText;
+}
+
+getText().then();
+
+
 
 //getData("hamburger").then();
 
