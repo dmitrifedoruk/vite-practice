@@ -188,8 +188,9 @@ async function getText() {
     // document.getElementById("demo").innerHTML = myText;
 }
 
-getText().then();
+// getText().then();
 
+console.log(getData("hamburger").then());
 
 
 
