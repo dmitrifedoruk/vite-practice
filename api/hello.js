@@ -1,20 +1,10 @@
 export async function GET(request) {
 
-    // const api_string = {
-    //     data: process.env.WORD
-    // }
+    const api_string = {
+        data: "hamburger"
+    }
 
-    const api_string = process.env.WORD;
+    // const myOptions = { status: 200, statusText: "SuperSmashingGreat!"};
 
-    const myOptions = { status: 200, statusText: "SuperSmashingGreat!"};
-
-    // const response = "kalamazoo";
-
-    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${api_string}`);
-
-    let data = "";
-
-    data = await response.json();
-
-    return new Response(data);
+    return new Response(api_string);
 }

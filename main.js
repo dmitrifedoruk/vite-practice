@@ -121,9 +121,9 @@ async function getText() {
 
     let data = "";
 
-    data = await response.json();
+    data = await response;
 
-    console.log(data);
+    console.log(data["data"]);
     // let myText = await myObject.text();
     // document.getElementById("demo").innerHTML = myText;
 }
