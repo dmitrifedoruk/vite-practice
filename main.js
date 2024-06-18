@@ -60,7 +60,7 @@ async function getUser() {
 
     length = data[0]["meanings"][0]["definitions"].length;
 
-    setupCounter(document.querySelector('#counter'),length);
+    // setupCounter(document.querySelector('#counter'),length);
 
 
     document.getElementById("counter").addEventListener("click", function() {
@@ -114,7 +114,7 @@ document.getElementById("wordInput").addEventListener("keypress", function(event
 document.getElementById("wordButton").addEventListener("click", getUser, false);
 
 
-setupCounter(document.querySelector('#counter'),length);
+// setupCounter(document.querySelector('#counter'),length);
 
 //getData("hamburger").then();
 
