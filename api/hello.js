@@ -12,7 +12,7 @@ export async function GET(request) {
 
     let data = "";
 
-    data = response.then();
+    data = await response.json();
 
     return new Response(data);
 }

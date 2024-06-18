@@ -44,21 +44,24 @@ let data = "";
 
 async function getData(input) {
 
-    // const api_url = `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`;
+    const api_url = `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`;
 
     // const requestOptions = {
     //     method: "POST"
     // };
 
-    const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${input}`);
+    const response = await fetch(api_url);
 
     let data = "";
 
-    data = await response;
+    data = await response.json();
 
     return data;
 
 }
+
+data = getData("artifice").then();
+console.log(data[0]);
 
 // data = getData(process.env.WORD).then();
 
@@ -181,16 +184,21 @@ document.getElementById("wordButton").addEventListener("click", getWord, false);
 async function getText() {
     let myObject = await fetch(`/api/hello`);
 
+    const data = myObject.json();
+
+    const definition = await data[0]["meanings"][0]["definitions"][0];
+    document.getElementById("demo").innerHTML = definition["definition"];
+
     console.log("things are happening");
 
-    console.log(myObject["data"]);
+    // console.log(myObject["data"]);
     // let myText = await myObject.text();
-    // document.getElementById("demo").innerHTML = myText;
+    document.getElementById("demo").innerHTML = data[0];
 }
 
 // getText().then();
 
-console.log(getData("hamburger").then());
+// getWord("hamburger").then();
 
 
 
