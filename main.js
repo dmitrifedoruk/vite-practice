@@ -1,29 +1,21 @@
 import './style.css'
 import bottleLogo from '/message-in-a-bottle.svg'
 import dragonLogo from '/dragon1.svg'
-// import { setupCounter } from './counter.js'
+import { setupCounter } from './counter.js'
 
 document.querySelector('#app').innerHTML = `
   <div>
   <img src="${dragonLogo}" class="logo" alt="dragon logo" />
     <h1>Hello!</h1>
-    
-    <button type="button" formaction="/api/hello">example</button>
+    <div class="card">
+      <button id="counter" type="button"></button>
+    </div>
     
     <div class="card">
       <label for="textInput">A word, please:&nbsp;</label>
       <input id="wordInput" />
       <button id="wordButton" type="submit">Submit</button>
     </div>
-    
-
-    <h2 id="heading"></h2>
-    
-    <div class="card" id="topCard">
-
-    </div>
-    
-
     
     
     <p id="demo">Fetch a file to change this text.</p>
@@ -39,20 +31,12 @@ let length = 1;
 
 let data = "";
 
-// const input = import.meta.env.WORD;
 
+async function getData() {
 
-async function getData(input) {
-
-    const api_url = `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`;
-
-    // const requestOptions = {
-    //     method: "POST"
-    // };
+    const api_url = `api/hello`;
 
     const response = await fetch(api_url);
-
-    let data = "";
 
     data = await response.json();
 
@@ -60,62 +44,41 @@ async function getData(input) {
 
 }
 
-data = getData("artifice").then();
-console.log(data[0]);
+data = getData().then();
 
-// data = getData(process.env.WORD).then();
-
-// data = getData(input).then();
-
-console.log(import.meta.env);
+console.log(data);
 
 
 
 
-async function getWord() {
+async function getUser() {
 
-
-
-    const input = document.getElementById("wordInput").value;
-
-    // document.getElementById("heading").innerHTML = input.charAt(0).toUpperCase() + input.slice(1);
+    //const input = document.getElementById("wordInput").value;
 
     // Parsing it to JSON format
-    const data = await getData(input);
+    const data = await getData();
 
-    document.getElementById("heading").innerHTML = data[0]["word"];
-
-    // length = data[0]["meanings"][0]["definitions"].length;
     length = data[0]["meanings"][0]["definitions"].length;
 
-    // setupCounter(document.querySelector('#counter'),length);
+    setupCounter(document.querySelector('#counter'),length);
 
-    document.getElementById("topCard").replaceChildren();
 
-    data[0]["meanings"].forEach((element) => {
-        addElement(element);
-        console.log(element["partOfSpeech"]);
-    });
+    document.getElementById("counter").addEventListener("click", function() {
+        let count = parseInt(document.getElementById("amount").innerHTML);
 
-    //addElement(data[0]["meanings"][0]);
-    // console.log(data[0]["meanings"][0]["partOfSpeech"]);
+        const definition = data[0]["meanings"][0]["definitions"][count-1];
+        document.getElementById("demo").innerHTML = definition["definition"];
 
-    // document.getElementById("counter").addEventListener("click", function() {
-    //     let count = parseInt(document.getElementById("amount").innerHTML);
-    //
-    //     const definition = data[0]["meanings"][0]["definitions"][count-1];
-    //     document.getElementById("demo").innerHTML = definition["definition"];
-    //
-    //     if(definition.hasOwnProperty('example'))
-    //     {
-    //         document.getElementById("demo2").innerHTML = '"'+definition["example"]+'"';
-    //     }
-    //     else{
-    //         document.getElementById("demo2").innerHTML = '';
-    //     }
-    //
-    //     //document.getElementById("demo").innerHTML = data[0]["meanings"][0]["definitions"][count-1]["definition"];
-    // }, false);
+        if(definition.hasOwnProperty('example'))
+        {
+            document.getElementById("demo2").innerHTML = '"'+definition["example"]+'"';
+        }
+        else{
+            document.getElementById("demo2").innerHTML = '';
+        }
+
+        //document.getElementById("demo").innerHTML = data[0]["meanings"][0]["definitions"][count-1]["definition"];
+    }, false);
 
     const definition = await data[0]["meanings"][0]["definitions"][0];
     document.getElementById("demo").innerHTML = definition["definition"];
@@ -132,37 +95,11 @@ async function getWord() {
 }
 
 
-function addElement(item) {
-    // create a new div element
-    const newDiv = document.createElement("div");
-
-    newDiv.classList.add("meaningColumn");
-
-    const newP = document.createElement("p");
-
-    newP.classList.add("partOfSpeech");
-
-    // and give it some content
-    const newContent = document.createTextNode(item["partOfSpeech"]);
-
-    // add the text node to the newly created div
-    newP.appendChild(newContent);
-
-    newDiv.appendChild(newP);
-
-    document.getElementById("topCard").appendChild(newDiv);
-
-    // add the newly created element and its content into the DOM
-    // const currentDiv = document.getElementById("div1");
-    // document.body.insertBefore(newDiv, currentDiv);
-}
 
 
 
 
-
-
-document.getElementById("wordButton").addEventListener("click", getWord, false);
+document.getElementById("wordButton").addEventListener("click", getUser, false);
 
 document.getElementById("wordInput").addEventListener("keypress", function(event) {
     // If the user presses the "Enter" key on the keyboard
@@ -174,31 +111,13 @@ document.getElementById("wordInput").addEventListener("keypress", function(event
     }
 });
 
-document.getElementById("wordButton").addEventListener("click", getWord, false);
+document.getElementById("wordButton").addEventListener("click", getUser, false);
 
 
-// setupCounter(document.querySelector('#counter'),length);
+setupCounter(document.querySelector('#counter'),length);
 
-// getData("hamburger").then();
+//getData("hamburger").then();
 
-async function getText() {
-    let myObject = await fetch(`/api/hello`);
-
-    const data = myObject.json();
-
-    const definition = await data[0]["meanings"][0]["definitions"][0];
-    document.getElementById("demo").innerHTML = definition["definition"];
-
-    console.log("things are happening");
-
-    // console.log(myObject["data"]);
-    // let myText = await myObject.text();
-    document.getElementById("demo").innerHTML = data[0];
-}
-
-getText().then();
-
-// getWord("hamburger").then();
 
 
 
