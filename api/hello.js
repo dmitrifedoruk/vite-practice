@@ -1,8 +1,10 @@
 export async function GET(request) {
 
-    const api_string = {
-        data: process.env.WORD
-    }
+    // const api_string = {
+    //     data: process.env.WORD
+    // }
+
+    const api_string = process.env.WORD;
 
     const myOptions = { status: 200, statusText: "SuperSmashingGreat!"};
 
@@ -12,7 +14,7 @@ export async function GET(request) {
 
     let data = "";
 
-    data = await response.then();
+    data = await response.json();
 
     return new Response(data);
 }
