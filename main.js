@@ -196,7 +196,7 @@ async function getText() {
     document.getElementById("demo").innerHTML = data[0];
 }
 
-// getText().then();
+getText().then();
 
 // getWord("hamburger").then();
 
