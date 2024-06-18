@@ -117,15 +117,7 @@ document.getElementById("wordButton").addEventListener("click", getUser, false);
 setupCounter(document.querySelector('#counter'),length);
 
 async function getText() {
-    const response = await fetch(`api/hello`);
-
-    let data = "";
-
-    data = await response;
-
-    console.log(data["data"]);
-    // let myText = await myObject.text();
-    // document.getElementById("demo").innerHTML = myText;
+    await fetch('api/hello');
 }
 
 getText().then();
