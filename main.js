@@ -32,14 +32,13 @@ let length = 1;
 let data = "";
 
 
-async function getData() {
-
-    const res = await fetch(api_url);
-
+async function getData(input) {
 
     const api_url = `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`;
 
     const response = await fetch(api_url);
+
+    let data = "";
 
     data = await response.json();
 
@@ -56,10 +55,10 @@ console.log(data);
 
 async function getUser() {
 
-    //const input = document.getElementById("wordInput").value;
+    const input = document.getElementById("wordInput").value;
 
     // Parsing it to JSON format
-    const data = await getData();
+    const data = await getData(input);
 
     length = data[0]["meanings"][0]["definitions"].length;
 
@@ -121,10 +120,20 @@ setupCounter(document.querySelector('#counter'),length);
 
 //getData("hamburger").then();
 
-getUser().then();
 
+async function getText() {
+    let myObject = await fetch("/api/hello");
 
+    console.log("things are happening");
 
+    data = await myObject;
+
+    console.log(myObject);
+    // let myText = await myObject.text();
+    // document.getElementById("demo").innerHTML = myText;
+}
+
+getText();
 
 
 
