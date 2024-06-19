@@ -126,7 +126,7 @@ async function getText() {
 
     console.log("things are happening");
 
-    data = await myObject;
+    data = await myObject.json();
 
     let myText = data["data"];
 
