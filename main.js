@@ -11,11 +11,11 @@ document.querySelector('#app').innerHTML = `
       <button id="counter" type="button"></button>
     </div>
     
-<!--    <div class="card">-->
-<!--      <label for="textInput">A word, please:&nbsp;</label>-->
-<!--      <input id="wordInput" />-->
-<!--      <button id="wordButton" type="submit">Submit</button>-->
-<!--    </div>-->
+    <div class="card">
+      <label for="textInput">A word, please:&nbsp;</label>
+      <input id="wordInput" />
+      <button id="wordButton" type="submit">Submit</button>
+    </div>
 
 <!--      <form action="/api/hello" method="POST">-->
 <!--        <label for="query">Search</label>-->
