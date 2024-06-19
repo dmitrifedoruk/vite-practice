@@ -142,26 +142,31 @@ async function getText() {
 
     data = await myObject.json();
 
-    const fahrenheit = ((data['current']['temp'] - 273.15) * 1.8) + 32;
+    // const fahrenheit = ((data['current']['temp'] - 273.15) * 1.8) + 32;
+    //
+    // document.getElementById("demo").innerHTML = fahrenheit.toFixed(1).toLocaleString() + "&#176;F";
+    //
+    // const time = data['current']['dt'];
+    //
+    // const date = new Date(time * 1000);
+    //
+    //
+    // document.getElementById("demo2").innerHTML = new Intl.DateTimeFormat('en-GB', {
+    //     dateStyle: 'full',
+    //     timeStyle: 'long',
+    //     timeZone: data['timezone'],
+    // }).format(date);
 
-    document.getElementById("demo").innerHTML = fahrenheit.toFixed(1).toLocaleString() + "&#176;F";
-
-    const time = data['current']['dt'];
-
-    const date = new Date(time * 1000);
-
-
-    document.getElementById("demo2").innerHTML = new Intl.DateTimeFormat('en-GB', {
-        dateStyle: 'full',
-        timeStyle: 'long',
-        timeZone: data['timezone'],
-    }).format(date);
+    //////////////////
 
     // const definition = await data[0]["meanings"][0]["definitions"][0];
     // document.getElementById("demo").innerHTML = definition["definition"];
 
-    // let myText = data["data"];
-    // document.getElementById("demo").innerHTML = myText;
+    let myText = data["lat"];
+    document.getElementById("demo").innerHTML = myText;
+
+    let myText2 = data["lon"];
+    document.getElementById("demo2").innerHTML = myText2;
 }
 
 getText();

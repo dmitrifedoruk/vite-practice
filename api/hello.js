@@ -3,11 +3,16 @@ export async function GET(lat,lon) {
     // const lat = 39.5839498;
     // const lon = -77.045579;
 
-    const api_url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${process.env.API_KEY}`;
+    // const api_url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${process.env.API_KEY}`;
+    //
+    // const response = await fetch(api_url);
 
-    const response = await fetch(api_url);
+    // let data = await response.json();
 
-    let data = await response.json();
+    const data = {
+        latitude: lat,
+        longitude: lon
+    }
 
 
 
