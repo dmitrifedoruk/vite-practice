@@ -140,7 +140,7 @@ async function getText() {
     document.getElementById("demo2").innerHTML = new Intl.DateTimeFormat('en-GB', {
         dateStyle: 'full',
         timeStyle: 'long',
-        timeZone: weatherData['timezone'],
+        timeZone: data['timezone'],
     }).format(date);
 
     // const definition = await data[0]["meanings"][0]["definitions"][0];
