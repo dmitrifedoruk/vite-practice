@@ -128,8 +128,8 @@ async function getText() {
 
     data = await myObject;
 
-    console.log(myObject.text());
-    let myText = await myObject.text();
+    console.log(data.text());
+    let myText = await data.text();
 
     document.getElementById("demo").innerHTML = myText;
 }
