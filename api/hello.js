@@ -34,5 +34,5 @@ export async function GET(request) {
 
 
 
-    return new Response(data);
+    return new Response(data.then());
 }
