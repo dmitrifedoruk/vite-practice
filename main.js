@@ -35,7 +35,7 @@ let data = "";
 async function getData() {
 
     const res = await fetch(api_url);
-    
+
 
     const api_url = `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`;
 
@@ -56,10 +56,10 @@ console.log(data);
 
 async function getUser() {
 
-    const input = document.getElementById("wordInput").value;
+    //const input = document.getElementById("wordInput").value;
 
     // Parsing it to JSON format
-    const data = await getData(input);
+    const data = await getData();
 
     length = data[0]["meanings"][0]["definitions"].length;
 
@@ -120,6 +120,8 @@ document.getElementById("wordButton").addEventListener("click", getUser, false);
 setupCounter(document.querySelector('#counter'),length);
 
 //getData("hamburger").then();
+
+getUser().then();
 
 
 
