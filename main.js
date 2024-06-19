@@ -119,7 +119,7 @@ setupCounter(document.querySelector('#counter'),length);
 async function getText() {
     let response = await fetch('api/hello');
 
-    console.log(response);
+    console.log(response.text());
 }
 
 getText().then();
