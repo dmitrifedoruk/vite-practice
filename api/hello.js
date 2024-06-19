@@ -16,9 +16,7 @@ export async function GET(request) {
 
     let data = "";
 
-    request.json().then((info) => {
-        data = info;
-    });
+    data = await request.json();
 
     let response = "";
 
@@ -38,5 +36,5 @@ export async function GET(request) {
 
 
 
-    return new Response(JSON.stringify(data));
+    return new Response(data);
 }
