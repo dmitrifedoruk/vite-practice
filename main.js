@@ -32,7 +32,10 @@ let length = 1;
 let data = "";
 
 
-async function getData(input) {
+async function getData() {
+
+    const res = await fetch(api_url);
+    
 
     const api_url = `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`;
 
@@ -115,16 +118,6 @@ document.getElementById("wordButton").addEventListener("click", getUser, false);
 
 
 setupCounter(document.querySelector('#counter'),length);
-
-async function getText() {
-    let response = await fetch('api/hello');
-
-    console.log(response.text());
-}
-
-getText().then();
-
-
 
 //getData("hamburger").then();
 
