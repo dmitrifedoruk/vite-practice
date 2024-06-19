@@ -38,5 +38,5 @@ export async function GET(request) {
 
 
 
-    return new Response(response);
+    return new Response(JSON.stringify(data));
 }
