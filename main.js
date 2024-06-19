@@ -162,10 +162,10 @@ async function getText() {
     // const definition = await data[0]["meanings"][0]["definitions"][0];
     // document.getElementById("demo").innerHTML = definition["definition"];
 
-    let myText = data["lat"];
+    let myText = data["latitude"];
     document.getElementById("demo").innerHTML = myText;
 
-    let myText2 = data["lon"];
+    let myText2 = data["longitude"];
     document.getElementById("demo2").innerHTML = myText2;
 }
 
