@@ -9,10 +9,12 @@ export async function GET(request) {
 
     // let data = await response.json();
 
-    const data = {
-        latitude: lat,
-        longitude: lon
-    }
+    // const data = {
+    //     latitude: lat,
+    //     longitude: lon
+    // }
+
+    const data = request.query;
 
 
 
@@ -23,5 +25,5 @@ export async function GET(request) {
 
 
 
-    return new Response(request.query);
+    return new Response(JSON.stringify(data));
 }
