@@ -1,13 +1,19 @@
 export async function GET(request) {
 
+    const url = new URL(request.url)
+    const query = url.searchParams
+
+    const lat = query.get("lat")
+    const lon = query.get("lon")
+
     // const lat = 39.5839498;
     // const lon = -77.045579;
 
-    // const api_url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${process.env.API_KEY}`;
-    //
-    // const response = await fetch(api_url);
+    const api_url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${process.env.API_KEY}`;
 
-    // let data = await response.json();
+    const response = await fetch(api_url);
+
+    let data = await response.json();
 
     // const data = {
     //     latitude: lat,
@@ -18,19 +24,17 @@ export async function GET(request) {
     //
     // data = request.url;
 
-    const url = new URL(request.url)
-    const query = url.searchParams
 
-    const data = query.get("lat")
 
-    let response = "";
 
-    if(data != null){
-        response= "tartar sauce"
-    }
-    else{
-        response = "peanuts"
-    }
+    // let response = "";
+    //
+    // if(data != null){
+    //     response= "tartar sauce"
+    // }
+    // else{
+    //     response = "peanuts"
+    // }
 
 
 
@@ -41,5 +45,5 @@ export async function GET(request) {
 
 
 
-    return new Response(data);
+    return new Response(JSON.stringify(data));
 }
