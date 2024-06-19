@@ -16,7 +16,7 @@ export async function GET(request) {
 
     let data = "";
 
-    data = await request.json();
+    data = request.referrer;
 
     let response = "";
 
