@@ -1,4 +1,4 @@
-export async function GET(lat,lon) {
+export async function GET(request) {
 
     // const lat = 39.5839498;
     // const lon = -77.045579;
