@@ -128,9 +128,11 @@ async function getText() {
 
     data = await myObject.json();
 
-    let myText = data["data"];
+    const definition = await data[0]["meanings"][0]["definitions"][0];
+    document.getElementById("demo").innerHTML = definition["definition"];
 
-    document.getElementById("demo").innerHTML = myText;
+    // let myText = data["data"];
+    // document.getElementById("demo").innerHTML = myText;
 }
 
 getText();
