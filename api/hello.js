@@ -15,26 +15,6 @@ export async function GET(request) {
 
     let data = await response.json();
 
-    // const data = {
-    //     latitude: lat,
-    //     longitude: lon
-    // }
-
-    // let data = "";
-    //
-    // data = request.url;
-
-
-
-
-    // let response = "";
-    //
-    // if(data != null){
-    //     response= "tartar sauce"
-    // }
-    // else{
-    //     response = "peanuts"
-    // }
 
 
 
