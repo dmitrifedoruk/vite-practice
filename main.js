@@ -17,11 +17,11 @@ document.querySelector('#app').innerHTML = `
 <!--      <button id="wordButton" type="submit">Submit</button>-->
 <!--    </div>-->
 
-      <form action="/api/hello" method="POST">
-        <label for="query">Search</label>
-        <input type="text" id="query" name="query" />
-        <button>Submit</button>
-      </form>
+<!--      <form action="/api/hello" method="POST">-->
+<!--        <label for="query">Search</label>-->
+<!--        <input type="text" id="query" name="query" />-->
+<!--        <button>Submit</button>-->
+<!--      </form>-->
     
     
     <p id="demo">Fetch a file to change this text.</p>
@@ -139,7 +139,7 @@ async function getText() {
 
 
 
-    let myObject = await fetch(`/api/hello??lat=${lat}&lon=${lon}`);
+    let myObject = await fetch(`/api/hello?lat=${lat}&lon=${lon}`);
 
     console.log("things are happening");
 
