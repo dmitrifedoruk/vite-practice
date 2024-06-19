@@ -14,7 +14,7 @@ export async function GET(request) {
     //     longitude: lon
     // }
 
-    const data = request.query;
+    const data = request;
 
     let response = "";
 
