@@ -14,7 +14,7 @@ export async function GET(request) {
     //     longitude: lon
     // }
 
-    const data = request.query.lat;
+    const data = request.json();
 
     let response = "";
 
@@ -34,5 +34,5 @@ export async function GET(request) {
 
 
 
-    return new Response(data);
+    return new Response(JSON.stringify(data));
 }
