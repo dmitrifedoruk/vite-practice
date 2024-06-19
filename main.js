@@ -127,8 +127,8 @@ async function getText() {
     console.log("things are happening");
 
     data = await myObject;
-    
-    let myText = data.text();
+
+    let myText = data;
 
     document.getElementById("demo").innerHTML = myText;
 }
