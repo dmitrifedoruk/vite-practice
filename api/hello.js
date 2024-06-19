@@ -18,7 +18,7 @@ export async function GET(request) {
 
     let response = "";
 
-    if(data.empty()){
+    if(data != null){
         response= "tartar sauce"
     }
     else{
