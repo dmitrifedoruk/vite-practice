@@ -123,20 +123,17 @@ setupCounter(document.querySelector('#counter'),length);
 
 async function getText() {
 
-    const request = {
-        lat: "39.5839498",
-        lon: "-77.045579"
-    };
+    const lat = 39.5839498;
+    const lon = -77.045579;
+
+    // const request = {
+    //     lat: "39.5839498",
+    //     lon: "-77.045579"
+    // };
 
 
 
-    let myObject = await fetch("/api/hello", {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(request)
-    });
+    let myObject = await fetch(`/api/hello??lat=${lat}&lon=${lon}`);
 
     console.log("things are happening");
 
