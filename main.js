@@ -131,7 +131,7 @@ async function getText() {
 
 
     let myObject = await fetch("/api/hello", {
-        method: 'POST',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         },
