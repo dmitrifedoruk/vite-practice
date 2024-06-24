@@ -146,6 +146,7 @@ async function getText() {
 
     const date = new Date(time * 1000);
 
+    document.getElementById("demo2").replaceChildren();
 
     document.getElementById("demo2").innerHTML = new Intl.DateTimeFormat('en-GB', {
         dateStyle: 'full',
