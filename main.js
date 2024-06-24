@@ -142,9 +142,9 @@ async function getText() {
 
     document.getElementById("demo").innerHTML = fahrenheit.toFixed(1).toLocaleString() + "&#176;F";
 
-    const time = data['current']['dt'];
+    //const time = data['current']['dt'];
 
-    const date = new Date(time * 1000);
+    const date = new Date();
 
     document.getElementById("demo2").replaceChildren();
 
