@@ -25,7 +25,7 @@ document.querySelector('#app').innerHTML = `
     
     
     <p id="demo"></p>
-    
+    <p id="demo1"></p>
     <p id="demo2"></p>
   </div>
 `
@@ -142,11 +142,9 @@ async function getText() {
 
     document.getElementById("demo").innerHTML = fahrenheit.toFixed(1).toLocaleString() + "&#176;F";
 
-    //const time = data['current']['dt'];
+    const weather = data['current']['weather'][0]['description'];
 
     const date = new Date();
-
-    document.getElementById("demo2").replaceChildren();
 
     document.getElementById("demo2").innerHTML = new Intl.DateTimeFormat('en-GB', {
         dateStyle: 'full',
