@@ -97,6 +97,11 @@ button:focus-visible {
   height: 80px;
 }
 
+#demo1 {
+  height: 60px;
+  font-size: 25px;
+}
+
 #demo2 {
   height: 60px;
   font-size: 25px;
