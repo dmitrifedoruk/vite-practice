@@ -144,7 +144,7 @@ async function getText() {
 
     const weather = data['current']['weather'][0]['description'];
 
-    document.getElementById("demo").innerHTML = weather;
+    document.getElementById("demo1").innerHTML = weather;
 
     const date = new Date();
 
