@@ -24,7 +24,7 @@ document.querySelector('#app').innerHTML = `
 <!--      </form>-->
     
     
-    <p id="demo">Fetch a file to change this text.</p>
+    <p id="demo"></p>
     
     <p id="demo2"></p>
   </div>
@@ -107,7 +107,7 @@ async function getUser() {
 
 
 
-document.getElementById("wordButton").addEventListener("click", getUser, false);
+//document.getElementById("wordButton").addEventListener("click", getUser, false);
 
 document.getElementById("wordInput").addEventListener("keypress", function(event) {
     // If the user presses the "Enter" key on the keyboard
@@ -119,7 +119,7 @@ document.getElementById("wordInput").addEventListener("keypress", function(event
     }
 });
 
-document.getElementById("wordButton").addEventListener("click", getUser, false);
+document.getElementById("wordButton").addEventListener("click", getText, false);
 
 
 setupCounter(document.querySelector('#counter'),length);
