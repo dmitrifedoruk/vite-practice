@@ -144,6 +144,8 @@ async function getText() {
 
     const weather = data['current']['weather'][0]['description'];
 
+    document.getElementById("demo").innerHTML = weather;
+
     const date = new Date();
 
     document.getElementById("demo2").innerHTML = new Intl.DateTimeFormat('en-GB', {
