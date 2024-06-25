@@ -24,7 +24,7 @@ document.querySelector('#app').innerHTML = `
 <!--      </form>-->
     
     
-    <p id="demo"></p>
+    <p id="demo" class="fade-in-text"></p>
     <p id="demo1"></p>
     <p id="demo2"></p>
   </div>
@@ -139,6 +139,10 @@ async function getText() {
     data = await myObject.json();
 
     const fahrenheit = ((data['current']['temp'] - 273.15) * 1.8) + 32;
+
+    document.getElementById("demo").classList.toggle("fade-in-text");
+
+
 
     document.getElementById("demo").innerHTML = fahrenheit.toFixed(1).toLocaleString() + "&#176;F";
 

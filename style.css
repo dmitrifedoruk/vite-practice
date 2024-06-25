@@ -92,6 +92,25 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.fade-in-text {
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.fade-out-text {
+  animation: fadeOut 0.5s;
+}
+
+
 #demo {
   font-size: 30px;
   height: 80px;
