@@ -140,7 +140,7 @@ async function getText() {
 
     const fahrenheit = ((data['current']['temp'] - 273.15) * 1.8) + 32;
 
-    document.getElementById("demo").classList.toggle("fade-in-text");
+    // document.getElementById("demo").classList.toggle("fade-in-text");
 
 
 
