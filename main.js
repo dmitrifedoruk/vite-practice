@@ -6,7 +6,7 @@ import { setupCounter } from './counter.js'
 document.querySelector('#app').innerHTML = `
   <div>
   <img src="${dragonLogo}" class="logo" alt="dragon logo" />
-    <h1>Hello!</h1>
+<!--    <h1>Hello!</h1>-->
     <div class="card">
       <button id="counter" type="button"></button>
     </div>
