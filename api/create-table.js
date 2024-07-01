@@ -1,10 +1,8 @@
 import { sql } from '@vercel/postgres';
-import {VercelRequest} from "@vercel/node";
-import {VercelResponse} from "@vercel/node";
 
 export default async function handler(
-    request: VercelRequest,
-    response: VercelResponse,
+    request,
+    response
 ) {
     try {
         const result =
