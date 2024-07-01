@@ -1,6 +1,6 @@
 import { sql } from '@vercel/postgres';
-import {VercelResponse} from "@vercel/node";
 import {VercelRequest} from "@vercel/node";
+import {VercelResponse} from "@vercel/node";
 
 export default async function handler(
     request: VercelRequest,
