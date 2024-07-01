@@ -5,10 +5,10 @@ export default async function handler(request, response) {
         const url = new URL(request.url)
         const query = url.searchParams
 
-        const size = query.get("size")
-        const roast = query.get("roast")
+        const size = query.get("size");
+        const roast = query.get("roast");
 
-        if (!petName || !ownerName) throw new Error('Info required');
+        if (!size || !roast) throw new Error('Info required');
         await sql`INSERT INTO Coffee (Size, Roast) VALUES (${size}, ${roast});`;
     } catch (error) {
         return response.status(500).json({ error });

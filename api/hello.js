@@ -1,10 +1,10 @@
 export async function GET(request) {
 
-    const url = new URL(request.url)
-    const query = url.searchParams
+    const url = new URL(request.url);
+    const query = url.searchParams;
 
-    const lat = query.get("lat")
-    const lon = query.get("lon")
+    const lat = query.get("lat");
+    const lon = query.get("lon");
 
     // const lat = 39.5839498;
     // const lon = -77.045579;
