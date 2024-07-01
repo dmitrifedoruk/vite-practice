@@ -6,7 +6,7 @@ export default async function handler(
 ) {
     try {
         const result =
-            await sql`CREATE TABLE Pets ( Name varchar(255), Owner varchar(255) );`;
+            await sql`CREATE TABLE Coffee ( Size varchar(255), Roast varchar(255) );`;
         return response.status(200).json({ result });
     } catch (error) {
         return response.status(500).json({ error });
