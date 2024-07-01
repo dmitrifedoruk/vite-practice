@@ -2,11 +2,9 @@ import { sql } from '@vercel/postgres';
 
 export default async function handler(request, response) {
     try {
-        const url = new URL(request.url)
-        const query = url.searchParams
 
-        const size = query.get("size");
-        const roast = query.get("roast");
+        const size = request.query.size;
+        const roast = request.query.roast;
 
         if (!size || !roast) throw new Error('Info required');
         await sql`INSERT INTO Coffee (Size, Roast) VALUES (${size}, ${roast});`;
