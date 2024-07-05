@@ -173,7 +173,7 @@ async function getText(lat,lon) {
 const lat = 39.5839498;
 const lon = -77.045579;
 
-getText();
+getText(lat,lon);
 
 
 
