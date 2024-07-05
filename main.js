@@ -127,10 +127,10 @@ setupCounter(document.querySelector('#counter'),length);
 //getData("hamburger").then();
 
 
-async function getText() {
+async function getText(lat,lon) {
 
-    const lat = 39.5839498;
-    const lon = -77.045579;
+    // const lat = 39.5839498;
+    // const lon = -77.045579;
 
     let myObject = await fetch(`/api/hello?lat=${lat}&lon=${lon}`);
 
@@ -169,6 +169,9 @@ async function getText() {
     // let myText2 = data["longitude"];
     // document.getElementById("demo2").innerHTML = myText2;
 }
+
+const lat = 39.5839498;
+const lon = -77.045579;
 
 getText();
 
