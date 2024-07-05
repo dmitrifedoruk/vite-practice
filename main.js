@@ -107,7 +107,7 @@ async function getUser() {
 
 
 
-//document.getElementById("wordButton").addEventListener("click", getUser, false);
+
 
 document.getElementById("wordInput").addEventListener("keypress", function(event) {
     // If the user presses the "Enter" key on the keyboard
@@ -119,7 +119,7 @@ document.getElementById("wordInput").addEventListener("keypress", function(event
     }
 });
 
-document.getElementById("wordButton").addEventListener("click", getText, false);
+document.getElementById("wordButton").addEventListener("click", submitLocation, false);
 
 
 setupCounter(document.querySelector('#counter'),length);
@@ -169,6 +169,19 @@ async function getText(lat,lon) {
     // let myText2 = data["longitude"];
     // document.getElementById("demo2").innerHTML = myText2;
 }
+
+
+async function submitLocation(){
+
+    const input = document.getElementById("wordInput").value;
+
+    const lat = input.split(',')[0];
+    const lon = input.split(',')[1];
+
+    await getText(lat,lon);
+
+}
+
 
 const lat = 39.5839498;
 const lon = -77.045579;
